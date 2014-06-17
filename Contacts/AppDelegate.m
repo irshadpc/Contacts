@@ -7,6 +7,7 @@
 //
 
 
+#import <AddressBook/AddressBook.h>
 #import "AppDelegate.h"
 
 
@@ -22,6 +23,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    // Ask for permission to access the address book
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
+            ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
+        //1
+        NSLog(@"Denied");
+    } else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized){
+        //2
+        NSLog(@"Authorized");
+    } else{ //ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined
+        //3
+        ABAddressBookRequestAccessWithCompletion(ABAddressBookCreateWithOptions(NULL, nil), ^(bool granted, CFErrorRef error) {
+            if (!granted){
+                //4
+                NSLog(@"Just denied");
+                return;
+            }
+            //5
+            NSLog(@"Just authorized");
+        });
+        NSLog(@"Not determined");
+    }
     return YES;
 }
 
