@@ -272,6 +272,7 @@
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "17037466-42C6-49AD-95AA-1C2309900D11";
 			};
 			name = Debug;
 		};
@@ -389,6 +390,7 @@
 				INFOPLIST_FILE = Contacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8EC6D1D3-8958-41CD-962B-9BAB7DFBE22D";
 			};
 			name = Release;
 		};
@@ -402,6 +404,7 @@
 				465C7DA5FC774CFD61B29FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		465C746A28B90B186C9E8E77 /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +413,7 @@
 				465C7621234E3ACBB6447675 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		465C7DDEF4AD95D8F13DC4DF /* Build configuration list for PBXProject "Contacts" */ = {
 			isa = XCConfigurationList;
